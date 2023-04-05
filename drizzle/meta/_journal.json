@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1680313063267,
+      "tag": "0000_certain_blizzard",
+      "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1680313344992,
+      "tag": "0001_puzzling_scorpion",
+      "breakpoints": false
+    }
+  ]
+}

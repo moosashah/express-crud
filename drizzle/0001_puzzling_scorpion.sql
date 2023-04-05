@@ -1,0 +1,1 @@
+ALTER TABLE tournaments ALTER COLUMN "address_line_two" DROP NOT NULL;
