@@ -1,7 +1,5 @@
 import * as express from 'express'
 import { Request, Response } from 'express'
-
-
 import { tournamentRoutes } from './tournaments/routes'
 
 // Constants

@@ -10,7 +10,8 @@ const pool = new Pool({
   database: process.env.PG_DATABASE || 'postgres',
 });
 
-export const db = drizzle(pool)
-
-migrate(db, { migrationsFolder: './drizzle' }).then(reply => console.log(reply))
+export const db = drizzle(pool);
+(async () => {
+  await migrate(db, { migrationsFolder: './drizzle' })
+})()
 
