@@ -1,22 +1,8 @@
-import * as express from 'express'
-import { Request, Response } from 'express'
-import { tournamentRoutes } from './tournaments/routes'
-import * as dotenv from 'dotenv'
-
-dotenv.config()
+import app from './app'
 
 // Constants
-const PORT = 4200
-const HOST = '0.0.0.0'
+const PORT = process.env.PORT
 
-// App handlers
-const app = express()
+app.listen(PORT)
+console.log(`Running on ${PORT}`)
 
-app.get('/ping', (_req: Request, res: Response) => {
-  res.status(200).send('pong')
-})
-
-app.use('/tournament', tournamentRoutes)
-
-app.listen(PORT, HOST)
-console.log(`Running on http://${HOST}:${PORT}`)
