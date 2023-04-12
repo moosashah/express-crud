@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@types/pg": "^8.6.6",
+    "dotenv": "^16.0.3",
     "drizzle-orm": "^0.23.2",
     "express": "^4.16.1",
     "pg": "^8.10.0",

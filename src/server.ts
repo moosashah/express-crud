@@ -1,6 +1,9 @@
 import * as express from 'express'
 import { Request, Response } from 'express'
 import { tournamentRoutes } from './tournaments/routes'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 // Constants
 const PORT = 4200
