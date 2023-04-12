@@ -9,8 +9,8 @@
  4. Deploying a typescript node app, and postgres db, to a VPS (linode)
 
 Todo:
-    * Rate limiting
-    * Tests 
-    * create docs for deploying
-    * artillery stress-test
-    * Caching
+* Rate limiting
+* Tests 
+* create docs for deploying
+* artillery stress-test
+* Caching
