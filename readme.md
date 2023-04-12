@@ -12,3 +12,5 @@ Todo:
     * Rate limiting
     * Tests 
     * create docs for deploying
+    * artillery stress-test
+    * Caching
