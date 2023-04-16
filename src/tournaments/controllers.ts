@@ -14,6 +14,7 @@ export const getTournament = async (req: Request, res: Response) => {
     if (tournament.length === 0) return res.status(404).json({ message: `Tournament of id: ${id} not found`, code: 404 })
     return res.status(200).json(tournament)
   }
+  console.log('no id')
   return res.status(400).json('No tournamentId provided')
 }
 
@@ -35,7 +36,7 @@ export const createTournament = async (req: TypedBody<NewTournament>, res: Respo
   const insertTournament = await db.insert(tournaments).values(newTournament).returning()
   const [newInsert] = insertTournament
 
-  return res.status(202).send(newInsert)
+  return res.status(201).send(newInsert)
 }
 
 export const updateTounament = async (req: Request, res: Response) => {
@@ -47,8 +48,9 @@ export const updateTounament = async (req: Request, res: Response) => {
       .where(eq(tournaments.id, id))
       .returning()
     if (updatedTournament.length === 0) return res.status(404).json({ message: `Tournament of id: ${id} not found`, code: 404 })
-    return res.status(202).send(updatedTournament)
+    return res.status(200).send(updatedTournament)
   } catch (e) {
+    console.log('im erroring in the update')
     return res.status(400).send(e)
   }
 }
@@ -60,6 +62,7 @@ export const deleteTournament = async (req: Request, res: Response) => {
     if (deletedTournament.length === 0) return res.status(404).json({ message: `Tournament of id: ${id} not found`, code: 404 })
     return res.status(204).send()
   } catch (e) {
+    console.log('im erroring in the delete')
     return res.status(400).send(e)
   }
 }
