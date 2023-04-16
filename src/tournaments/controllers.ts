@@ -44,7 +44,7 @@ export const updateTounament = async (req: Request, res: Response) => {
   const { name, address_post_code, address_city, address_line_one, address_line_two } = req.body
   try {
     const updatedTournament = await db.update(tournaments)
-      .set({ address_line_one, address_line_two, name, address_city, address_post_code, updatedAt: new Date() })
+      .set({ address_line_one, address_line_two: address_line_two ? address_line_two : null, name, address_city, address_post_code, updatedAt: new Date() })
       .where(eq(tournaments.id, id))
       .returning()
     if (updatedTournament.length === 0) return res.status(404).json({ message: `Tournament of id: ${id} not found`, code: 404 })
