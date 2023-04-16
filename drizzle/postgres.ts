@@ -10,7 +10,7 @@ const pool = new Pool({
   database: process.env.PG_DATABASE,
 });
 
-export const db = drizzle(pool);
+export const db = drizzle(pool, { logger: true });
 (async () => {
   await migrate(db, { migrationsFolder: './drizzle' })
 
